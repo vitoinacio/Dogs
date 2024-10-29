@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from './style.modules/Header.module.css';
+import styles from './Style.modules/Header.module.css';
 import Dogs from '../Assets/dogs.svg?react';
 
 const Header = () => {
