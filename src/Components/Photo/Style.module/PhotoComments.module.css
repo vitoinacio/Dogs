@@ -5,6 +5,12 @@
 }
 
 .comments li {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   line-height: 1.2;
+}
+
+@media screen and (max-width: 64rem) {
+  .comments {
+    height: 12rem;
+  }
 }
