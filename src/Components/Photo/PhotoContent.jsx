@@ -13,7 +13,7 @@ const PhotoContent = ({ data }) => {
   return (
     <div className={Styles.photo}>
       <div className={Styles.img}>
-        <Image src={photo.src} alt={photo.title}/>
+        <Image src={photo.src} alt={photo.title} />
       </div>
       <div className={Styles.details}>
         <div>
@@ -25,16 +25,18 @@ const PhotoContent = ({ data }) => {
             )}
             <span className={Styles.vizualizacoes}>{photo.acessos}</span>
           </p>
-          <h1 className='title'>
+          <h1 className="title">
             <Link to={`/foto/${photo.id}`}>{photo.title}</Link>
           </h1>
           <ul className={Styles.attributes}>
             <li>{photo.peso} kg</li>
-            <li>{photo.idade <= 1 ? `${photo.idade} ano` : `${photo.idade} anos` }</li>
+            <li>
+              {photo.idade <= 1 ? `${photo.idade} ano` : `${photo.idade} anos`}
+            </li>
           </ul>
         </div>
       </div>
-      <PhotoComments id={photo.id} comments={comments}/>
+      <PhotoComments id={photo.id} comments={comments} />
     </div>
   );
 };
