@@ -3,11 +3,52 @@
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   margin-bottom: 2rem;
+  grid-template-areas: 
+    'form preview';
+}
+
+.photoPost form{
+  grid-area: form;
+}
+
+.containerPreview{
+  grid-area: preview;
+}
+
+.labelFile{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
+  border: 1px solid #333;
+  color: #333;
+  border-radius: .5rem;
+  cursor: pointer;
+  padding: .8rem;
+  transition: .3s;
+  margin: 1rem 0;
+}
+
+.labelFile svg > path{
+  transition: .3s;
+}
+
+.labelFile:hover  svg > path,
+.labelFile:focus  svg > path,
+.labelFile:active  svg > path,
+.labelFile:hover,
+.labelFile:focus,
+.labelFile:active{
+  background-color: #333;
+  color: #eee;
+  stroke: #eee;
 }
 
 .file {
-  margin-bottom: 1rem;
+  display: none;
 }
+
 
 .preview{
   border-radius: 1rem;
@@ -20,4 +61,22 @@
   display: block;
   height: 0px;
   padding-bottom: 100%;
+}
+
+@media screen and (max-width: 40rem){
+  .photoPost{
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    'preview'
+    'form';
+  }
+
+  .containerPreview{
+    display: flex;
+    justify-content: center;
+  }
+
+  .preview{
+    width: 15rem;
+  }
 }
