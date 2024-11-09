@@ -7,6 +7,7 @@ import Button from '../Forms/Button';
 import Error from '../Helper/Error';
 import { PHOTO_POST } from '../../api';
 import { useNavigate } from 'react-router-dom';
+import AddImage from '../../Assets/image-plus.svg?react';
 
 const UserPhotoPost = () => {
   const nome = useForm();
@@ -46,13 +47,16 @@ const UserPhotoPost = () => {
         <Input label="Nome" type="text" nome="nome" {...nome} />
         <Input label="Peso" type="number" nome="peso" {...peso} />
         <Input label="Idade" type="number" nome="idade" {...idade} />
-        <input
-          className={styles.file}
-          type="file"
-          name="img"
-          id="img"
-          onChange={handleImgChange}
-        />
+        <label className={styles.labelFile} htmlFor="img">
+          <AddImage/> Adicionar Imagem
+          <input
+            className={styles.file}
+            type="file"
+            name="img"
+            id="img"
+            onChange={handleImgChange}
+          />
+        </label>
         {loading ? (
           <Button disabled>Enviando...</Button>
         ) : (
@@ -60,7 +64,7 @@ const UserPhotoPost = () => {
         )}
         <Error error={erro} />
       </form>
-      <div>
+      <div className={styles.containerPreview}>
         {img.preview && (
           <div
             className={styles.preview}
