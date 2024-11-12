@@ -16,7 +16,7 @@ const PhotoComments = (props) => {
 
   return (
     <>
-      <ul ref={commentsSection} className={Styles.comments} 
+      <ul ref={commentsSection} className={`${Styles.comments} ${props.single ? Styles.single : ''}`} 
       style={{
         height: `${mobile && comments.length > 0 ? '12rem' : 'auto'}`,
       }}>
@@ -27,7 +27,7 @@ const PhotoComments = (props) => {
           </li>
         ))}
       </ul>
-      {login && <PhotoCommentsForm id={props.id} setComments={setComments}/>}
+      {login && <PhotoCommentsForm single={props.single} id={props.id} setComments={setComments}/>}
     </>
   );
 };
